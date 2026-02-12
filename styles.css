@@ -31,6 +31,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 /* Matrix Rain Background */
 #matrix-canvas {
     position: fixed;
@@ -537,6 +541,8 @@ section {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 10px;
+    word-wrap: break-word;
+    line-height: 1.4;
 }
 
 .cert-year {
@@ -712,7 +718,7 @@ section {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
     gap: 30px;
 }
 
@@ -792,7 +798,7 @@ section {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
     gap: 40px;
 }
 
@@ -1007,6 +1013,10 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    #matrix-canvas {
+        opacity: 0.08;
+    }
+
     .nav-links {
         position: fixed;
         top: 70px;
@@ -1084,9 +1094,25 @@ section {
 }
 
 @media (max-width: 480px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
     .terminal-body {
-        padding: 20px;
-        font-size: 0.85rem;
+        padding: 15px;
+        font-size: 0.8rem;
+    }
+
+    .terminal-output {
+        font-size: 0.75rem;
+    }
+
+    .hero {
+        padding-top: 60px;
     }
 
     .hero-cta {
@@ -1097,14 +1123,122 @@ section {
     .cta-button {
         width: 100%;
         justify-content: center;
+        padding: 12px 30px;
+        font-size: 0.9rem;
     }
 
     .section-title {
         font-size: 1.5rem;
+        gap: 10px;
     }
 
-    .project-card {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-container {
+        padding: 12px 15px;
+    }
+
+    .project-card,
+    .about-card,
+    .skill-category {
+        padding: 20px;
         min-width: 100%;
+    }
+
+    .experience-card {
+        padding: 20px;
+    }
+
+    .exp-header h3 {
+        font-size: 1.4rem;
+    }
+
+    .exp-header h4 {
+        font-size: 1.1rem;
+    }
+
+    .card-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-header h3 {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .tech-tags,
+    .coursework {
+        gap: 8px;
+    }
+
+    .tech-tag,
+    .coursework-tag {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+
+    .cert-badge {
+        padding: 20px;
+    }
+
+    .contact-terminal .terminal-body {
+        padding: 20px 15px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .contact-icon {
+        font-size: 1.5rem;
+    }
+
+    .skill-name {
+        font-size: 0.85rem;
+    }
+
+    .category-title {
+        font-size: 1.2rem;
+    }
+
+    .subsection-title {
+        font-size: 1.4rem;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 10px 0;
+    }
+
+    .about-card,
+    .education-card,
+    .cert-badge,
+    .project-card,
+    .experience-card {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .exp-details li {
+        font-size: 0.9rem;
+    }
+
+    .project-description,
+    .project-features li {
+        font-size: 0.9rem;
+    }
+
+    .footer-text,
+    .footer-hash {
+        font-size: 0.75rem;
+        text-align: center;
     }
 }
 
